@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matching Game</title>
+    <style>
+        body {
+            background-color: #263238;
+        }
+
+        div {
+            position: absolute;
+        }
+        img{
+            position: absolute;
+        }
+        h1  {
+            color: white;
+            text-align: center;
+            font-family: 'Kaushan Script';
+        }
+        #leftSide {
+            left: 7px;
+            width: 600px;
+            height: 490px;
+
+        }
+        #rightSide {
+            left: 610px;
+        }
+        #leftSide, #rightSide  {
+            background-color: #ECEFF1;
+            box-shadow: 0 0 20px #212121;
+        }
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
+</head>
+<body id = "body" onload = "generateFaces()">
+<h1>CONFUSION GAME</h1>
+<div id = "sides">
+    <div id = "leftSide"></div>
+    <div id = "rightSide"></div>
+</div>
+
+<script>
+    var numberOfFaces = 3;
+    function generateFaces()
+    {
+        for(var i =0; i < numberOfFaces; i++)
+        {
+            var image = document.createElement("img");
+            image.src = "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+            var top, left;
+            top = Math.random(0, 400) * 400;
+            left = Math.random(0, 400) * 400;
+            image.setAttribute("style", "left:" + left.toString() + "px;top:" + top.toString() + "px");
+            document.getElementById("leftSide").appendChild(image);
+        }
+        var theRightSide = document.getElementById("rightSide");
+        var theLeftSide = document.getElementById("leftSide");
+        var leftSideImages = theLeftSide.cloneNode(true);
+        document.getElementById("rightSide").appendChild(leftSideImages);
+        var newRight = document.getElementById("rightSide");
+        var newLeft = newRight.firstChild;
+        newLeft.removeChild(newLeft.lastChild);
+
+        var theBody = document.getElementsByTagName("body")[0];
+        theLeftSide.lastChild.onclick = function nextLevel(event) {
+          event.stopPropagation();
+            numberOfFaces += 3;
+            while(theLeftSide.firstChild)
+            {
+                theLeftSide.removeChild(theLeftSide.firstChild);
+            }
+            theRightSide.removeChild(theRightSide.firstChild);
+            generateFaces();
+        };
+         theBody.onclick = function gameOver() {
+           alert("Game Over !");
+             theBody.onclick  = null;
+             theLeftSide.lastChild.onclick = null;
+
+         };
+
+    }
+</script>
+</body>
+</html>
+
