@@ -6,4 +6,4 @@ A matching game using javascript
 ##JAVASCRIPT
 
 #Live Preview
-http://codepen.io/ganeshkumarm/pen/qaWgJj
+http://codepen.io/ganeshkumarm/full/qaWgJj/
