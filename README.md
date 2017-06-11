@@ -1,9 +1,5 @@
 # ConfusionGame
 A matching game using javascript
 
-##HTML
-##CSS
-##JAVASCRIPT
-
 #Live Preview
-http://codepen.io/ganeshkumarm/full/qaWgJj/
+<a href="http://ganeshmkumar.github.io/ConfusionGame">Confusion Game</a>
