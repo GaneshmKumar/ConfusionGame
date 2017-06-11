@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+h1 {
+    font-family: 'Lobster', sans-serif;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+body {
+    color: #fafafa;
+    text-align: center;
+    background: #212121;
+}
+
+img {
+    position: absolute;
+    width: 70px;
+    transition: linear 0.3s;
+    height: 70px
+}
+
+#leftSide, #rightSide {
+    margin-top: 30px; 
+    height: 500px;
+    padding: 30px 30px;
+    background: #212121;
+}
+
+img:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
